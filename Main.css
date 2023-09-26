@@ -1,0 +1,46 @@
+.Navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #121619;
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.Navbar .Dreapta {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navbar h1 {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.Dreapta button {
+    width: 10vw;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+button:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.Dreapta {
+    gap: 8vw;
+}
