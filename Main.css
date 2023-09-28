@@ -10,7 +10,14 @@ body {
     padding: 0;
     margin: 0;
     background-color: #E5E7E9;
+    background-image: url("What-is-mindful-running-small.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
+
+
 
 .Navbar .Dreapta {
     flex: 50%;
@@ -46,6 +53,11 @@ button:hover {
 }
 
 .Main_leaderboard {
+    border: 2px solid red;
+    position: absolute;
+    top:50%;
+    height:40vh;
+
 
 
 }
