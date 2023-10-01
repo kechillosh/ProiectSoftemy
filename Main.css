@@ -10,10 +10,6 @@ body {
     padding: 0;
     margin: 0;
     background-color: #E5E7E9;
-    background-image: url("What-is-mindful-running-small.jpg");
-
-    background-repeat: no-repeat;
-    background-size: cover;
 
 }
 
@@ -61,5 +57,17 @@ button:hover {
 
 
 }
+
+.Navbar .Stanga img {
+    width: 120px;
+    height: 100px;
+}
+
+.Navbar .Stanga img:hover {
+    cursor: pointer;
+}
+
+
+
 
 
