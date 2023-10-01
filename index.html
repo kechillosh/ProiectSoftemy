@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="Main.css" />
     <meta charset="UTF-8">
-    <title>Prima aplicatie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="LoginPage.css" />
 </head>
 <body>
-<div class="Navbar">
-    <div class="Stanga">
-<h1>Navbar</h1>
-    </div>
-    <div class="Dreapta">
-        <button>Home</button>
-        <button>My runs</button>
-        <button>Profile</button>
-    </div>
+<div class="container">
+    <form id="loginForm">
+        <h1>Login</h1>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <p>Don't have an account? <a onclick="showRegisterForm()">Sign up here</a>.</p>
+        <a href="Homepage.html">
+        <button>Login</button>
+        </a>
+    </form>
 
-    <div class="Main_leaderboard">
-        <div class="Second_leaderboard"><h1>Leaderboard</h1></div>
-        <div class="Third_leaderboard"></div>
+
+    <div id="registerDiv" style="display: none;">
+        <h1>Sign up</h1>
+        <form id="registerForm">
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+           <a href="Homepage.html">
+               <button>Sign up</button>
+           </a>
+        <p>Already have an account? <a onclick="showLoginForm()">Login here</a> </p>
+
+        </form>
     </div>
 </div>
+
+<script>
+    function showRegisterForm() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registerDiv').style.display = 'block';
+    }
+
+    function showLoginForm() {
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('registerDiv').style.display = 'none';
+    }
+</script>
 </body>
 </html>
