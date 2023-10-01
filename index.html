@@ -2,45 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Login/Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="LoginPage.css" />
+    <link href="LoginPage.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="container">
     <form id="loginForm">
         <h1>Login</h1>
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <p>Don't have an account? <a onclick="showRegisterForm()">Sign up here</a>.</p>
-        <a href="Homepage.html">
-        <button>Login</button>
-        </a>
+        <input placeholder="Username" type="text">
+        <input placeholder="Password" type="password">
+            <a href="Homepage.html">
+                <button type="button">Login</button>
+            </a>
+        <p>Don't have an account?
+        <a href="#" onclick="showRegisterForm(event)">Sign up here</a>.
     </form>
 
 
     <div id="registerDiv" style="display: none;">
         <h1>Sign up</h1>
         <form id="registerForm">
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-           <a href="Homepage.html">
-               <button>Sign up</button>
-           </a>
-        <p>Already have an account? <a onclick="showLoginForm()">Login here</a> </p>
+
+            <input placeholder="Username">
+            <input placeholder="Email">
+            <input placeholder="Password">
+            <a href="Homepage.html">
+                <button type="button">Sign up</button>
+            </a>
+            <p>Already have an account?
+            <a href="#" onclick="showLoginForm(event)">Login here</a>
 
         </form>
     </div>
 </div>
 
 <script>
-    function showRegisterForm() {
+    function showRegisterForm(event) {
+        event.preventDefault();
         document.getElementById('loginForm').style.display = 'none';
         document.getElementById('registerDiv').style.display = 'block';
     }
 
-    function showLoginForm() {
+    function showLoginForm(event) {
+        event.preventDefault();
         document.getElementById('loginForm').style.display = 'block';
         document.getElementById('registerDiv').style.display = 'none';
     }
