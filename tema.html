@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="optButon()">
+<label><h1>selectati optiunea</h1>
+    <select id="mySelect" onclick="optButon()" >
+        <option>'</option>
+        <option>Minim</option>
+        <option>Complet</option>
+    </select>
+</label>
+
+
+<div id="minim">
+    <button onclick="AlertaI()">Identitate</button>
+    <button onclick="AlertaC()">Comunicare</button>
+</div>
+
+<div id="complet">
+
+    <button onclick="AlertaE()">Experienta</button>
+    <button onclick="promptAlerta()">Hobby</button>
+</div>
+
+</body>
+<script>
+    function optButon() {
+        let afiseazaMinim = document.getElementById("minim");
+        let afiseazaComplet = document.getElementById("complet");
+
+        if (document.getElementById("mySelect").value === "'") {
+            afiseazaMinim.style.display = 'none'
+            afiseazaComplet.style.display="none"
+        } else if (document.getElementById("mySelect").value === "Minim") {
+            afiseazaMinim.style.display = "block";
+            afiseazaComplet.style.display = "none"
+        } else {
+            afiseazaComplet.style.display = "block";
+            afiseazaMinim.style.display ="block"
+        }
+    }
+
+    function AlertaI () {
+        let Identitate = {
+            nume: "El Shaer",
+            prenume:"Amir",
+            cod : 3123,
+            varsta: 20
+        }
+        console.log(Identitate)
+        alert("Nume:"+Identitate.nume+Identitate.prenume+Identitate.cod+Identitate.varsta)
+    }
+
+    function AlertaC() {
+        let Comunicare = "Facebook : El Shaer Amir"
+        console.log(Comunicare)
+        alert(Comunicare)
+    }
+
+    function AlertaE() {
+        let Experienta = "Car rental website project : 2 luni"
+        console.log(Experienta)
+        alert(Experienta)
+    }
+
+    function promptAlerta() {
+
+        let obiect1 = {
+            status: "on",
+        }
+
+        let userInput = prompt("Please enter object");
+        let value= prompt("Please enter value:"+userInput);
+        obiect1[userInput] = value
+
+
+
+
+
+
+        console.log(obiect1)
+
+
+
+
+
+        alert(userInput)
+    }
+
+
+</script>
+</html>

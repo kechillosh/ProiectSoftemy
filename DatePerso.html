@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitii Curs</title>
+</head>
+<body>
+<input onclick="alertaVehicle1()" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"> I have a bike</label><br>
+<input onclick="alertaVehicle2()" type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+<label for="vehicle2"> I have a car</label>
+</body>
+<script>
+    console.log("incep executia js")
+    let variabilaV1 = window.localStorage.getItem("Vehicle1")
+    console.log(variabilaV1)
+    if(variabilaV1 == null){
+        alert("baza de date corupta")
+    } else {
+        alert("baza de date este ok")
+        let v=document.getElementById("vehicle1")
+        v.checked = true
+    }
+
+    let variabilaV2 = window.localStorage.getItem("Vehicle2")
+    console.log(variabilaV2)
+    if(variabilaV2 == null){
+        alert("baza de date corupta")
+    } else {
+        alert("baza de date este ok")
+        let vv=document.getElementById("vehicle2")
+        vv.checked = true
+    }
+
+    function alertaVehicle1() {
+        let v1= document.getElementById("vehicle1")
+        if(v1.checked){
+            alert("Vehicle 1 selected")
+            window.localStorage.setItem("Vehicle1",v1.value)
+
+        }else{
+            v1.checked=false
+            alert("Vehicle 1 unselected")
+            window.localStorage.removeItem("Vehicle1")
+
+        }
+    }
+
+    function alertaVehicle2() {
+        let v2= document.getElementById("vehicle2")
+        alert("Vehicle 2 selected")
+        window.localStorage.setItem("Vehicle2",v2.value)
+        console.log(v2.value)
+    }
+    console.log("finalizez executia js")
+
+</script>
+</html>

@@ -17,6 +17,7 @@
             </a>
         <p>Don't have an account?
         <a href="#" onclick="showRegisterForm(event)">Sign up here</a>.
+            <button onclick="calculeazaProdusulPrimelor6Cifre()">calculeaza</button>
     </form>
 
 
@@ -38,17 +39,40 @@
 </div>
 
 <script>
+
     function showRegisterForm(event) {
-        event.preventDefault();
         document.getElementById('loginForm').style.display = 'none';
         document.getElementById('registerDiv').style.display = 'block';
     }
 
     function showLoginForm(event) {
-        event.preventDefault();
         document.getElementById('loginForm').style.display = 'block';
         document.getElementById('registerDiv').style.display = 'none';
     }
+
+    function calculeazaProdusulPrimelor6Cifre(){
+        let rezultat=0;
+        rezultat=(1*2*3*4*5*6)
+        // console.log(rezultat)
+        //return rezultat
+alert(rezultat)
+        return (1*2*3*4*5*rezultat);
+    }
+    let browser=window.navigator.permissions
+    console.log(browser)
+    let x,y=15
+   // alert(x)
+
+
+    if(y>10){
+        alert(y)
+    }
+    else{
+        console.log(y)
+    }
+
+
+
 </script>
 </body>
 </html>
