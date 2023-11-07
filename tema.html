@@ -86,16 +86,50 @@
         an: 2022
     };
 
-    const locatie = {
+    let populatie = 203
+
+    let locatie = {
         oras: "New York",
         tara: "USA",
         populatie: 8398748,
         logLocatie: function() {
             console.log(locatie);
+        },
+        GetPopulatie : function () {
+            return this.populatie
+
+        },
+        getTara : function () {
+            return this.tara
+        },
+        SetOras : function (oras_nou) {
+            this.oras = oras_nou
+            let x = this.getTara()
+            alert(x)
         }
     };
 
     locatie.logLocatie();
+    let P = locatie.GetPopulatie()
+    console.log(P)
+
+    console.log(locatie.getTara())
+
+    locatie.SetOras("vaslui")
+    console.log(locatie)
+
+    console.log(window)
+    console.log(this)
+
+    let tablou = []
+    tablou[0] = "zero"
+    tablou[1] = "unu"
+    tablou.push[2] = "doi"
+    tablou[3] = tablou[0]
+
+    console.log(tablou)
+
+    
 
 
 

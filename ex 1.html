@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<body>
+
+<div>
+    <input type = "text" id="inputNumar" placeholder="Introduce_Numar">
+    <button onclick=cautanr2()>
+        Cauta Nr
+    </button>
+</div>
+
+
+</body>
+<script>
+    let TablouNr = [678,90,23,15,7,9,10,1,2,3]
+    let inputdenr = document.getElementById("inputNumar")
+
+    function cautanr2() {
+
+        let inputNumber = parseInt(inputdenr.value);
+
+        for (let i = 0; i < TablouNr.length; i++) {
+            if (inputNumber === TablouNr[i]) {
+                alert("Numar gasit in tablou");
+                return;
+            }
+        }
+        alert("Numar inexistent in tablou");
+    }
+
+
+</script>
+</html>

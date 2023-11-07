@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+</head>
+<body>
+<input id="inputNumar" placeholder="Enter a number > 5">
+<button onclick="startConfiguration()">Continue</button>
+
+<div id="configurations" style="display: none;">
+    <h2>Phone Configurations</h2>
+    <input type="text" id="model" placeholder="Model">
+    <input type="text" id="price" placeholder="Price">
+    <input type="text" id="manufacturer" placeholder="Manufacturer">
+    <input type="text" id="memory" placeholder="Memory">
+    <button onclick="addConfiguration()">Add Configuration</button>
+    <button onclick="displayConfigurations()" id="displayButton" style="display: none;">Display Configurations</button>
+</div>
+
+<script>
+    let configurations = [];
+    let maxConfigurations;
+    let currentConfiguration = 0;
+
+    function startConfiguration() {
+        let numarInput = document.getElementById("inputNumar");
+        maxConfigurations = parseInt(numarInput.value);
+
+        if (isNaN(maxConfigurations) || maxConfigurations <= 5) {
+            alert("Introdu numar > 5.");
+            numarInput.value = "";
+        } else {
+            numarInput.disabled = true;
+            document.getElementById("configurations").style.display = "block";
+        }
+    }
+
+    function addConfiguration() {
+        if (currentConfiguration >= maxConfigurations) {
+            alert("Nr maxim de configurari");
+            return;
+        }
+
+        let modelInput = document.getElementById("model");
+        let priceInput = document.getElementById("price");
+        let manufacturerInput = document.getElementById("manufacturer");
+        let memoryInput = document.getElementById("memory");
+
+        if (isInputEmpty(modelInput) || isInputEmpty(priceInput) || isInputEmpty(manufacturerInput) || isInputEmpty(memoryInput)) {
+            alert("introduce datele");
+            return;
+        }
+
+        configurations.push({
+            model: modelInput.value,
+            price: priceInput.value,
+            manufacturer: manufacturerInput.value,
+            memory: memoryInput.value
+        });
+        currentConfiguration++;
+
+        clearInputFields(modelInput, priceInput, manufacturerInput, memoryInput);
+
+        if (currentConfiguration >= maxConfigurations) {
+            document.getElementById("displayButton").style.display = "block";
+        }
+    }
+
+    function isInputEmpty(inputElement) {
+        return inputElement.value.trim() === "";
+    }
+
+    function clearInputFields() {
+        for (let i = 0; i < arguments.length; i++) {
+            arguments[i].value = "";
+        }
+    }
+
+    function displayConfigurations() {
+        console.log("Configurations entered by the user:");
+        console.log(configurations);
+    }
+</script>
+</body>
+</html>
