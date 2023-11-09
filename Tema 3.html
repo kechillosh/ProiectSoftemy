@@ -6,7 +6,7 @@
     <title>Search app</title>
 </head>
 <body>
-<div>
+<div class="main">
 
         <label for="Alege Operator">Alege Operator:</label>
         <select name="Alege Operator" id="Alege Operator">
@@ -14,14 +14,29 @@
             <option value="=">=</option>
             <option value=">">></option>
         </select>
-    <div>
-        <input type="number" id="StabilesteReferinta" placeholder="Stabileste Referinta">
+    <div class="TablouNR">
+        <input type="number" id="InputTablou" placeholder="Input Tablou">
+        <button class="adauga" onclick="memoreazaInput()">Adauga numar</button>
     </div>
         <input type="text" id="StabilesteReferinta" placeholder="Stabileste Referinta">
     <button>Cauta Referinta</button>
     <button>Reset</button>
 
 </div>
+<script>
+    let tablou = []
+    function memoreazaInput () {
+        let InputTablou =document.getElementById("InputTablou")
+        let valoare = InputTablou.value
+        if(tablou.length < 10) {
+            tablou.push(valoare)
+            console.log(tablou)
+        } else {
+            alert("Tabloul are deja 10 numere introduse")
+        }
+
+    }
+</script>
 
 </body>
 </html>
