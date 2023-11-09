@@ -10,16 +10,16 @@
 
         <label for="Alege Operator">Alege Operator:</label>
         <select name="Alege Operator" id="Alege Operator">
-            <option value="!">!</option>
-            <option value="=">=</option>
-            <option value=">">></option>
+            <option >! =</option>
+            <option >></option>
+            <option >===</option>
         </select>
     <div class="TablouNR">
         <input type="number" id="InputTablou" placeholder="Input Tablou">
         <button class="adauga" onclick="memoreazaInput()">Adauga numar</button>
     </div>
-        <input type="text" id="StabilesteReferinta" placeholder="Stabileste Referinta">
-    <button>Cauta Referinta</button>
+        <input id="StabilesteReferinta" placeholder="Stabileste Referinta">
+    <button onclick="CalculeazaRef()">Cauta Referinta</button>
     <button>Reset</button>
 
 </div>
@@ -36,6 +36,32 @@
         }
 
     }
+
+
+
+    function CalculeazaRef() {
+        let valoareSelect = document.getElementById("Alege Operator").value;
+        let referinta = document.getElementById("StabilesteReferinta").value;
+
+        let rezultate = [];
+
+        for (let i = 0; i < tablou.length; i++) {
+            if (valoareSelect === "!=" && tablou[i] != referinta) {
+                rezultate.push(tablou[i]);
+            } else if (valoareSelect === ">" && tablou[i] > referinta) {
+                rezultate.push(tablou[i]);
+            } else if (valoareSelect === "===" && tablou[i] === referinta) {
+                rezultate.push(tablou[i]);
+            }
+        }
+
+        if (rezultate.length === 0) {
+            alert("Nu avem numere care să îndeplinească condiția specificată.");
+        } else {
+            console.log("Rezultatele sunt:", rezultate);
+        }
+    }
+
 </script>
 
 </body>
