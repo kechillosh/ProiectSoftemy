@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input  id="InputTablou" placeholder="Input Tablou" onchange="inputTablou()">
+</div>
+
+</body>
+<script>
+    let tablou = [];
+
+    function inputTablou() {
+        let valoareInput = document.getElementById("InputTablou").value;
+
+        while (valoareInput !== "#Stop" && !isNaN(valoareInput)) {
+            tablou.push(valoareInput);
+            console.log("Tablou:", tablou);
+            break;
+
+        }
+
+        if (valoareInput === "#Stop" || isNaN(valoareInput)) {
+            document.getElementById("InputTablou").disabled = true;
+            console.log("Stopped or invalid input");
+
+        }
+    }
+</script>
+</html>
