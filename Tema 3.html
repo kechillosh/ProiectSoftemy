@@ -20,7 +20,7 @@
     </div>
         <input id="StabilesteReferinta" placeholder="Stabileste Referinta">
     <button onclick="CalculeazaRef()">Cauta Referinta</button>
-    <button>Reset</button>
+    <button onclick="reset()">Reset</button>
 
 </div>
 <script>
@@ -46,7 +46,7 @@
         let rezultate = [];
 
         for (let i = 0; i < tablou.length; i++) {
-            if (valoareSelect === "!=" && tablou[i] != referinta) {
+            if (valoareSelect === "!=" && tablou[i] !== referinta) {
                 rezultate.push(tablou[i]);
             } else if (valoareSelect === ">" && tablou[i] > referinta) {
                 rezultate.push(tablou[i]);
@@ -60,6 +60,13 @@
         } else {
             console.log("Rezultatele sunt:", rezultate);
         }
+    }
+
+    function reset (){
+        document.getElementById("StabilesteReferinta").value=""
+        document.getElementById("InputTablou").value=""
+        tablou = []
+        console.log(tablou)
     }
 
 </script>

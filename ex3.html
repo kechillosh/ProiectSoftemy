@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let resurseBackend =[{id:0,nume:"laptop"},{id:1,nume:"pc"},{id:2,nume:"tableta"},{id:3,nume:"tv"}]
+    function printWhile () {
+        let i = 0
+        //facuta cu while
+        while ( i < resurseBackend.length) {
+            alert(resurseBackend[i].id + " " + resurseBackend[i].nume)
+            resurseBackend[i].pret = prompt("introduceti pretul")
+            i++
+
+
+        }
+
+
+        //aceasi alerta facuta cu for loop
+       // for(let i = 0; i<resurseBackend.length;i++) {
+            //alert(resurseBackend[i].id + " " + resurseBackend[i].nume)
+       //}
+    }
+    printWhile()
+    console.log(resurseBackend)
+</script>
+</html>

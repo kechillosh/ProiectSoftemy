@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1> optiuni posibile (adunare,scadere,inmultire,impartire)</h1>
+    <input id="SirCaractere" placeholder="introduceti sir caractere" onchange="rezolvareSwitch(1024,2)">
+</div>
+</body>
+<script>
+    let input = document.getElementById("SirCaractere")
+
+    function rezolvare () {
+        if (input.value === "adunare") {
+            console.log(1024+2)
+            alert("am inteles")
+        } else if (input.value === "scadere") {
+            console.log(1024-2)
+            alert("am inteles")
+        } else if (input.value === "inmultire") {
+            console.log(1024*2)
+            alert("am inteles")
+        } else if (input.value === "impartire") {
+            console.log(1024/2)
+            alert("am inteles")
+        } else {
+            alert("nu se recunoaste operatorul matematic")
+        }
+
+    }
+
+
+    function rezolvareSwitch (p1,p2) {
+        let valoareInput = input.value.toLowerCase()
+        switch (valoareInput) {
+            case "adunare" :
+                alert("am inteles")
+                console.log(p1+p2)
+                break;
+            case "scadere" :
+                alert("am inteles")
+                console.log(p1-p2)
+                break;
+            case "inmultire" :
+                alert("am inteles")
+                console.log(p1*p2)
+                break;
+            case "impartire" :
+                alert("am inteles")
+                console.log(p1/p2)
+                break;
+            default :
+                alert("nu se recunoaste operatorul matematic")
+
+        }
+    }
+</script>
+</html>
